@@ -7,12 +7,16 @@ class VowelsTest {
     void getCount_whenNoVowel_thenReturnZero() {
         assertEquals(0,Vowels.getCount("bcdfghjklmnpqrstvwxyz"));
     }
+
     @Test
-    void getCount_whenHasVowels_thenReturnCountVowels() {
+    void getCount_whenHasONlyConsoants_thenReturnZero() {
         assertEquals(0,Vowels.getCount("r"));
         assertEquals(0,Vowels.getCount("r wyz"));
         assertEquals(0,Vowels.getCount("r wyz thq"));
+    }
 
+    @Test
+    void getCount_whenHasVowels_thenReturnCountVowels() {
         assertEquals(1,Vowels.getCount("a"));
         assertEquals(1,Vowels.getCount("e"));
         assertEquals(1,Vowels.getCount("i"));
@@ -29,6 +33,12 @@ class VowelsTest {
         assertEquals(2,Vowels.getCount("dftg ou"));
 
         assertEquals(5,Vowels.getCount("uoiea"));
+    }
 
+    @Test
+    void getCount_whenMultipleVowelsAndConsoants_thenReturnCountVowels () {
+        assertEquals(5, Vowels.getCount("qwe asd zxc qwir rtyu polk"));
+        assertEquals(5, Vowels.getCount2("qwe asd zxc qwir rtyu polk"));
+        assertEquals(5, Vowels.getCount3("qwe asd zxc qwir rtyu polk"));
     }
 }
