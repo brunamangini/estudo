@@ -1,3 +1,5 @@
+package vowelCount;
+
 public class Vowels {
     private static final String VOWELS_PATTERN = "[aeiou]";
 
